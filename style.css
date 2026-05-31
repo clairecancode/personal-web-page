@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+:root {
+  --bg: rgb(247, 236, 213);
+  --text: rgb(60, 26, 70);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Cormorant Garamond", serif;
+  min-height: 100vh;
+}
+
+
+.typing-title {
+  min-height: 1.2em;
+}
+
+.home-x {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  color: rgb(60, 26, 70);
+  font-size: 2rem;
+  font-family: serif;
+  font-style: italic;
+
+  border: 2px solid rgb(60, 26, 70);
+  border-radius: 50%;
+
+  background: rgb(247, 236, 213);
+
+  transition: all 0.2s ease;
+
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .home-x {
+    top: 16px;
+    right: 16px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 1.6rem;
+  }
+}
+
+.home-x:hover {
+  background: rgb(60, 26, 70);
+  color: rgb(247, 236, 213);
+  transform: rotate(90deg);
+}
+
+.home-x:active {
+  transform: scale(0.95);
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.typing-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
+  min-height: 80px;
+  font-style: italic;
+}
+
+.cursor {
+  animation: blink .8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-layout .content {
+  display: none;
+}
+
+.home-layout .phone-wrapper {
+  height: 70vh;
+  width: auto;
+}
+
+.home-layout .phone-img {
+  height: 100%;
+  width: auto;
+}
+
+.phone-wrapper {
+  position: relative;
+  width: 240px;
+  aspect-ratio: 493 / 1387;
+}
+
+.phone-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.phone-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* Content area */
+.content {
+  flex: 1;
+  max-width: 800px;
+  text-align: left;
+  padding-top: 1rem;
+}
+
+.hotspot {
+  position: absolute;
+  display: block;
+  z-index: 10;
+}
+
+/* STAR BUTTON */
+.home-btn {
+  left: 39%;
+  top: 55.5%;
+  width: 22%;
+  height: 9%;
+}
+
+/* ABOUT ME */
+.about-btn {
+  left: 15%;
+  top: 73.5%;
+  width: 65%;
+  height: 4.3%;
+}
+
+/* GALLERY */
+.gallery-btn {
+  left: 15%;
+  top: 78.2%;
+  width: 65%;
+  height: 4.3%;
+}
+
+/* WRITING */
+.writing-btn {
+  left: 15%;
+  top: 83%;
+  width: 65%;
+  height: 4.3%;
+}
+
+/* CONTACT */
+.contact-btn {
+  left: 15%;
+  top: 87.7%;
+  width: 65%;
+  height: 4.3%;
+}
+
+.content {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+/* Gallery */
+
+.gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery-item {
+  flex: 0 0 320px;
+  scroll-snap-align: center;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.caption {
+  margin-top: .5rem;
+  font-size: 1.1rem;
+}
+
+/* Writing */
+
+.pdf-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.pdf-card {
+  background: rgba(255,255,255,.4);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.pdf-card a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+/* Contact */
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.4rem;
+}
+
+.contact-links a {
+  color: var(--text);
+}
+
+@media (min-width: 900px) {
+  .layout {
+    gap: 3rem;
+  }
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* adjust spacing between buttons */
+  flex-wrap: wrap;
+}
+
+.contact-btn-img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0; /* removes tiny inline spacing */
+}
+
+.contact-btn-img img {
+  display: block;
+  width: 180px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-btn-img img {
+    width: 130px;
+  }
+}

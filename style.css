@@ -18,8 +18,9 @@ body {
   min-height: 100vh;
 }
 
-
 .typing-title {
+  will-change: contents;
+  transform: translateZ(0);
   min-height: 1.2em;
 }
 
@@ -62,6 +63,18 @@ body {
 
     font-size: 1.6rem;
   }
+}
+
+.pdf-link img {
+  margin-top: 1rem;
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.pdf-link img:hover {
+  transform: scale(1.05);
 }
 
 .home-x:hover {
@@ -305,6 +318,10 @@ body {
   height: auto;
   margin: 0;
   padding: 0;
+}
+
+.contact-btn-img img:hover {
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
